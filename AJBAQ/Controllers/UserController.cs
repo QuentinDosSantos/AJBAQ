@@ -20,9 +20,16 @@ namespace AJBAQ.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet("{id}", Name = "Connect")]
+        public ActionResult<User> Connect(string id)
+        {
+            UserRepository repository = new UserRepository(_mapper);
+            return repository.GetUser(id);
+        }
+
         // GET: api/User/5
         [HttpGet("{id}/Answer", Name = "GetAnswerByUser")]
-        public ActionResult<IEnumerable<Answer>> Answers(int id)
+        public ActionResult<IEnumerable<Answer>> Answers(string id)
         {
             AnswerRepository repository = new AnswerRepository(_mapper);
             return repository.GetAnswersByUsers(id);

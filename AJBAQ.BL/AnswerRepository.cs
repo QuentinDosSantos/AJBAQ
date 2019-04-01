@@ -27,7 +27,7 @@ namespace AJBAQ.BL
             }
         }
 
-        public List<Answer> GetAnswersByUsers(int userId)
+        public List<Answer> GetAnswersByUsers(string userId)
         {
             using (AJBAQContext context = new AJBAQContext())
             {

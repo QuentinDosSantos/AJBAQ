@@ -30,6 +30,14 @@ namespace AJBAQ.BL
             }
         }
 
+        public User GetUser(string id)
+        {
+            using (AJBAQContext context = new AJBAQContext())
+            {
+                return _mapper.Map<User>(context.User.Find(id));
+            }
+        }
+
         string CreateString(int stringLength)
         {
             const string allowedChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz0123456789!@$?_-";
