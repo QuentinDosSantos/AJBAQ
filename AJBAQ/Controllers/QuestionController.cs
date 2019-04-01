@@ -38,9 +38,10 @@ namespace AJBAQ.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Question value)
         {
-
+            QuestionRepository repository = new QuestionRepository(_mapper);
+            repository.CreateQuestion(value);
         }
     }
 }
