@@ -23,7 +23,7 @@ namespace AJBAQ.BL
             var value = _mapper.Map<DAL.Models.User>(user);
             using (AJBAQContext context = new AJBAQContext())
             {
-                user.UserId = CreateString(5);
+                value.UserId = CreateString(5);
                 context.Add(value);
                 context.SaveChanges();
                 return _mapper.Map<User>(value);
