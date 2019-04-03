@@ -13,7 +13,7 @@ namespace AJBAQ.DAL.Models
         public int ChoiceId { get; set; }
         public int QuestionId { get; set; }
         public bool IsRightChoice { get; set; }
-        public string Choice1 { get; set; }
+        public string Body { get; set; }
 
         public virtual Question Question { get; set; }
         public virtual ICollection<Answer> Answer { get; set; }

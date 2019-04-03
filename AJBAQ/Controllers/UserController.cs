@@ -29,10 +29,10 @@ namespace AJBAQ.Controllers
 
         // GET: api/User/5
         [HttpGet("{id}/Answer", Name = "GetAnswerByUser")]
-        public ActionResult<IEnumerable<Answer>> Answers(string id)
+        public ActionResult<object> Answers(string id)
         {
             AnswerRepository repository = new AnswerRepository(_mapper);
-            return repository.GetAnswersByUsers(id);
+            return new { Items = repository.GetAnswersByUsers(id) };
         }
 
         // POST: api/User

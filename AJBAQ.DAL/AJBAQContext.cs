@@ -71,9 +71,9 @@ namespace AJBAQ.DAL
             {
                 entity.Property(e => e.ChoiceId).HasColumnName("choice_id");
 
-                entity.Property(e => e.Choice1)
+                entity.Property(e => e.Body)
                     .IsRequired()
-                    .HasColumnName("choice")
+                    .HasColumnName("body")
                     .IsUnicode(false);
 
                 entity.Property(e => e.IsRightChoice).HasColumnName("is_right_choice");
@@ -91,9 +91,9 @@ namespace AJBAQ.DAL
             {
                 entity.Property(e => e.QuestionId).HasColumnName("question_id");
 
-                entity.Property(e => e.Question1)
+                entity.Property(e => e.Body)
                     .IsRequired()
-                    .HasColumnName("question")
+                    .HasColumnName("body")
                     .IsUnicode(false);
             });
 

@@ -22,10 +22,10 @@ namespace AJBAQ.Controllers
 
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<Question>> Get()
+        public ActionResult<object> Get()
         {
             QuestionRepository repository = new QuestionRepository(_mapper);
-            return repository.GetQuestions();
+            return new { Items = repository.GetQuestions() };
         }
 
         // GET api/values/5
